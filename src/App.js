@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+
+import Input from './Components/Input' 
+import Prompter from './Components/Prompter'
+import Result from './Components/Result'
+
 import './App.css';
 
+
 function App() {
+  const [submit, setSubmit] = useState(false)
+  const [writing, setWriting] = useState('')
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {!submit ? 
+      <div>
+      <Prompter />
+      <Input submit={submit}setSubmit={setSubmit} setWriting={setWriting} writing={writing}/>
+      </div>
+      :
+      <Result submit={submit}setSubmit={setSubmit} setWriting={setWriting } writing={writing} />
+      }
+
     </div>
   );
 }

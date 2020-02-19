@@ -1,38 +1,80 @@
-.App {
+.prompt {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.writingPad {
+  text-align: left;
+  width: 80vw;
+  height: 80vh;
+  margin-left: 10%;
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.paper {
+  width: 75vw;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100%;
+  margin: 20px auto;
+  margin-left: 12%;
+  background-color: white;
+  box-shadow: 0px 0px 5px 0px #888;
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 1.5rem;
+  display: inline-block;
+} 
+
+.paper::before {
+  content: '';
+  width: 2px;
+  min-height: 100vh;
+  height: 100%;
+  background-color: rgba(255,0,0,0.6);
+  position: absolute;
+  top: 0;
+  left: 40px;
+}
+
+.pattern {
+  height: 100%;
+  min-height: 100vh;
+  background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
+}
+
+.content {
+  padding-top: 6px;
+  padding-left: 56px;
+  padding-right: 16px;
+  line-height: 25px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 19px;
+  letter-spacing: 1px;
+  word-spacing: 5px;
+  white-space: pre-line;
+}
+
+.input-btn {
+  text-align: center;
+}
+
+.button {
+  background-color: #4466DD;
+  color: #EEE;
+  padding: 0.5rem 1.5rem;
+  text-align: center;
+  font-size: 2rem;
+  align-content: center;
+  border-radius: 5px;
+}
+
+.button:hover {
+  box-shadow: 0 5px 6px 0 rgba(0,0,0,0.24), 0 10px 25px 0 rgba(0,0,0,0.19);
+  cursor: pointer;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#save {
+  background-color: #44AAEE;
+  margin-right: 0;
 }
